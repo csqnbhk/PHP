@@ -7,7 +7,7 @@
    
    class db
    {
-       private $conn;
+           private $conn;
 	   private $result;
 	   private $host;
 	   private $user;
@@ -103,16 +103,13 @@
 		   echo 'hostname:'.$this->host.','.'user:'.$this->user.','.'database:'.$this->database;
 	   }
 	   
-       function db_close()
+           function db_close()
 	   {
 	      mysqli_close($this->conn);
 	   }
-	   
-	   
-	   
-	   
+	   	   	   
    }
-   
+
    /* //测试
    echo '<h1>开始...</h1><br>';
    $a=new db('localhost','root','123456','books');
