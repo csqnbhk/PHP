@@ -1,4 +1,4 @@
-<table width="100" width="100" border="1" cellspadding="0" cellspacing="0">
+<table width="100" width="100" border="1" cellpadding="0" cellspacing="0">
 <form name="form1" method="post" action="下拉列表值获取.php">
 <tr align="center">
 <td width="50" height="50"><select name="select1" size="1" >
