@@ -1,4 +1,4 @@
-<?php
+﻿<?php
    /*-
    * author:demon
    * time:2018/3/22
