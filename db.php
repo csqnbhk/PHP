@@ -117,7 +117,7 @@
    }
 
     //测试
-	/**
+   /*
    echo '<h1>开始...</h1><br>';
    $a=new db('localhost','root','123456','books');
    $a->db_conn();
