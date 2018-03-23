@@ -2,10 +2,10 @@
 
    function getpage($page,$page_count,$sep=" ")
    {
-     $url = $_SERVER['PHP_SELF'];
+         $url = $_SERVER['PHP_SELF'];
 	 $start = ($page==1)?"":"<a href='{$url}?page=1'>首页</a>";
-     $end = ($page>=$page_count)?"":"<a href='{$url}?page={$page_count}'>尾页</a>";
-     $prevpage = ($page>1)?($page-1):1;
+         $end = ($page>=$page_count)?"":"<a href='{$url}?page={$page_count}'>尾页</a>";
+         $prevpage = ($page>1)?($page-1):1;
 	 $nextpage = ($page>=$page_count)?$page_count:($page+1);
 	 $prev = ($page==1)?"":"<a href='{$url}?page={$prevpage}'>上一页</a>";
 	 $next = ($page==$page_count)?"":"<a href='{$url}?page={$nextpage}'>下一页</a>";
@@ -24,10 +24,7 @@
 	   }
 	   
 	 }
-
-   $str_return=$str.$sep . $start.$sep . $prev.$sep . $p.$sep . $next.$sep . $end.$sep;
-   return $str_return;
+        $str_return=$str.$sep . $start.$sep . $prev.$sep . $p.$sep . $next.$sep . $end.$sep;
+        return $str_return;
    }
- 
-
 ?>
