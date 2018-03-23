@@ -7,7 +7,7 @@
    
    class db
    {
-           private $conn;
+       private $conn;
 	   private $result;
 	   private $host;
 	   private $user;
@@ -62,6 +62,12 @@
 	   function db_result_query($sql)
 	   {
 	       $this->result=mysqli_query($this->conn,$sql);	
+		   return $this->result;
+	   }
+	   //返回记录数
+	   function db_row()
+	   {
+		    return mysqli_num_rows($this->result);
 	   }
 	   function db_noresult_query($sql)
 	   {
@@ -110,13 +116,18 @@
 	   	   	   
    }
 
-   /* //测试
+    //测试
+	/**
    echo '<h1>开始...</h1><br>';
    $a=new db('localhost','root','123456','books');
    $a->db_conn();
    $a->db_result_query('select*from book_250 limit 30');
    $a->db_fetch_row();
    echo '<h1>结束!!!<br></h1>';
+
+   $count=$a->db_row();
+   echo "记录数为{$count}";
+   $a->db_close();
    */
   
 ?>
