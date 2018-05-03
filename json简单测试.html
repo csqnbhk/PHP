@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>json简单使用</title>
+<style>
+       h1{color:red}
+</style>
+</head>
+<body>
+       <h1>1.JSON对象,JSON数组对象</h1>
+       <table name="table1" width="300" height="200" border="1">
+		<tr>
+			<td>姓名:</td>
+			<td id="name"></td>
+		</tr>
+		
+		<tr>
+			<td>身份证:</td>
+			<td id="id_card"></td>
+		</tr>
+		
+		<tr>
+            <td>性别:</td>
+			<td id="sex"></td>
+		</tr>
+		
+		<tr>
+		    <td>爱好:</td>
+			<td id="hobby"></td>
+		</tr>	
+		</table> 
+		
+	  <script>
+		  var obj_json={"name":"令狐冲","id_card":666666};                                                             //JSON对象
+		  var obj_json_array={"info":[{"sex":"男"},{"hobby1":"打抱不平","hobby2":"说话"},{"emotion":"感情不专一"}] };  //JSON对象数组
+		  document.getElementById("name").innerHTML=obj_json.name;
+		  document.getElementById("id_card").innerHTML=obj_json.id_card;
+		  
+		  document.getElementById("sex").innerHTML=obj_json_array.info[0].sex;//xx.info和xx["info"]一样
+		  document.getElementById("hobby").innerHTML=obj_json_array["info"][1].hobby1+","+obj_json_array["info"][1].hobby2+","+obj_json_array["info"][2].emotion;
+	
+	  </script>
+	  
+	  <h1>2.把JSON文本转为JSON对象(使用eval()函数，潜在一个危险，会执行js脚本.)</h1>
+	  <h1>3.使用原生JSON支持,JSON.parse(),更安全.</h1>
+	  <table name="table2" width="300" height="200" border="1" >
+	         <tr>
+			     <td>用户名</td>
+				 <td>密码</td>
+			 </tr>
+			     <td id="user1"></td>
+				 <td id="pass1"></td>
+			 </tr>
+			  <tr>
+			     <td id="user2"></td>
+				 <td id="pass2"></td>
+			 </tr>
+	  </table>
+	  <script>
+		  var json_txt='{"info":['+
+		  '{"user":"jack","pass":"123"},'+
+		  '{"user":"demon","pass":"456"}]}';
+		  var json_obj=eval ("("+json_txt+")");
+		  document.getElementById("user1").innerHTML=json_obj["info"][0].user;
+		  document.getElementById("pass1").innerHTML=json_obj["info"][0].pass;
+		  document.getElementById("user2").innerHTML=json_obj["info"][1].user;
+		  document.getElementById("pass2").innerHTML=json_obj["info"][1].pass;
+		  
+		  var obj = JSON.parse(json_txt);
+		  alert(obj["info"][0].user + '  ' + obj.info[0].pass);
+		  
+		  
+	  </script>
+	  
+	  
+</body>
+</html>
